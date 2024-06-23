@@ -1,0 +1,60 @@
+@import "./variaveis";
+@import "./mixins";
+
+.cabecalho {
+  width: 100%;
+  background:transparent;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 22px;
+  position:fixed;
+
+  .logo {
+    font-family: $font-logo;
+    font-weight: bold;
+    font-size:$font-size-header;
+  }
+
+  .links {
+    padding-top: 15px;
+    display: flex;
+    gap: 30px;
+
+    .active{
+        color:$cor-principal;
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        font-size: $font-size-header;
+        font-weight: 600;
+        position:relative;
+        transition: 0.4s ease-in-out;
+        &:hover{
+            color:$cor-principal;
+        }
+      }
+    }
+  }
+
+  .btn-contato {
+    padding-top: 15px;
+
+
+    button {
+      font-size: $font-size-header;
+      border:4px solid $cor-terceira;
+      border-radius: 16px;
+      padding: 5px 20px;
+      background:linear-gradient(45deg, $cor-principal, $cor-terceira);
+      background-size: 400% 100%;
+      width:fit-content;
+      transition:0.5s ease-in-out;
+      cursor: pointer;
+      animation: gradient 2s ease-in infinite;    
+    }
+  }
+}

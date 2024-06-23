@@ -1,0 +1,23 @@
+@import './variaveis';
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: $font-universal;
+    color:$cor-font;
+}
+
+body{
+    height:100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $cor-secundaria;
+}
+span{
+    color:$cor-principal;
+}
+@import './cabecalho';
+@import './principal';

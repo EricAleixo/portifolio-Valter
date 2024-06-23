@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//Gerais
+$cor-principal:#0567f0;
+$cor-secundaria:#081b29;
+$cor-terceira:#04b6fd;
+$font-universal: 'poppins', san-serif;
+$cor-font:#ffffff;
+
+//Cabeçalho
+$font-logo: 'Playfair Display', times, serif;
+$font-size-header: 16px;
+
+
+//keyframes
+@keyframes gradient {
+    50%{
+        background-position: 100% 50%;
+    }
+}
