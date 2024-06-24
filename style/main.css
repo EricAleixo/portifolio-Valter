@@ -39,7 +39,7 @@
   color: var(--cor-texto);
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -250,7 +250,7 @@ main {
   width: 200px;
   display: flex;
   justify-content: space-between;
-  gap:20px;
+  gap: 20px;
 }
 
 .principal .btn-sociais a {
@@ -267,7 +267,7 @@ main {
   z-index: 1;
   overflow: hidden;
   transition: 0.3s ease-in-out;
-  padding:30px;
+  padding: 30px;
 }
 
 .principal .btn-sociais a::before {
@@ -397,7 +397,7 @@ main {
 
 .habilidades .skills ul li .barra .percentage {
   color: var(--cor-terciaria);
-  background:var(--cor-principal);
+  background: var(--cor-principal);
 }
 
 @keyframes html {
@@ -464,4 +464,155 @@ main {
 .animate.react {
   width: 67%;
   animation: react 3s;
+}
+
+/* HABILIDADES TERMINADA AQUI */
+
+.projetos {
+  height: 100vh;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.marcacao{
+  color:var(--cor-principal)
+}
+
+.projeto-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  width:100%;
+  background:var(--cor-fundo);
+  gap:30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px black;
+  border-radius: 10px;
+}
+
+.projeto-box h2{
+  font-size:40px;
+}
+
+.projeto-box span:nth-of-type(1){
+  position: absolute;
+  top:0;
+  left:0;
+  height:4px;
+  width:100%;
+  background:linear-gradient(to right, transparent, var(--cor-principal));
+  animation: animar1 2s linear infinite;
+}
+
+@keyframes animar1 {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+.projeto-box span:nth-of-type(2){
+  position: absolute;
+  top:0;
+  right:0;
+  height:100%;
+  width:4px;
+  background:linear-gradient(to bottom, transparent, var(--cor-principal));
+  animation: animar2 2s linear infinite;
+  animation-delay: 1s ;
+}
+
+@keyframes animar2 {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(100%);
+  }
+}
+.projeto-box span:nth-of-type(3){
+  position: absolute;
+  bottom:0;
+  left:0;
+  height:4px;
+  width:100%;
+  background:linear-gradient(to right, transparent, var(--cor-principal));
+  animation: animar3 2s linear infinite;
+}
+
+@keyframes animar3 {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+.projeto-box span:nth-of-type(4){
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:4px;
+  background:linear-gradient(to top, transparent, var(--cor-principal));
+  animation: animar4 2s linear infinite;
+  animation-delay: 1s ;
+}
+
+@keyframes animar4 {
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(-100%);
+  }
+}
+
+.projetos img{
+  width:300px;
+  height: 200px;
+  border:5px solid var(--cor-secundaria);
+  border-radius: 20px;
+}
+
+.projetos .projeto-box-sub{
+  display: flex;
+  gap:30px;
+}
+
+.imagem-container{
+  
+  position: relative;
+  display: inline-block;
+}
+
+.overlay{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background-image:linear-gradient(to bottom, transparent, var(--cor-secundaria));
+  opacity:0;
+  transition:opacity 0.3s ease;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.overlay h1{
+  text-align: center;
+  margin-top:40%;
+  text-transform: uppercase;
+}
+
+.overlay p{
+  text-align: center;
+}
+
+.imagem-container:hover .overlay{
+  opacity: 1;
 }
