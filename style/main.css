@@ -1,19 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* Cores principais */
+  --cor-principal: #5ba3ff;
+  --cor-secundaria: #b8e0ff;
+  --cor-terciaria: #1a1a2e;
+
+  /* Cores de texto e fundo */
+  --cor-texto: #2d2d8b;
+  --cor-fundo: #dfdfdf;
+
+  /* Cores de botões */
+  --cor-botao-fundo: linear-gradient(
+    45deg,
+    var(--cor-principal),
+    var(--cor-secundaria)
+  );
+  --cor-botao-borda: var(--cor-secundaria);
+
+  /* Outras cores */
+  --cor-branca: #fff;
+}
+
 @keyframes gradient {
   50% {
     background-position: 100% 50%;
   }
 }
+
+/* ESTILOS GERAIS */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "poppins", san-serif;
-  color: #e0e7ff;
+  font-family: "Poppins", sans-serif;
+  color: var(--cor-texto);
 }
 
 body {
@@ -22,11 +45,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1a1a2e;
+  background-color: var(--cor-fundo);
+  transition: background 0.5s;
+}
+
+.fundo.active {
+  background: var(--cor-terciaria);
 }
 
 span {
-  color: #1e6fe0;
+  color: var(--cor-principal);
 }
 
 main {
@@ -35,11 +63,9 @@ main {
   padding: 100px 50px;
 }
 
-@keyframes gradient {
-  50% {
-    background-position: 100% 50%;
-  }
-}
+/* FIM DO ESTILO GERAL */
+
+/* CABEÇALHO */
 .cabecalho {
   width: 100%;
   background: transparent;
@@ -48,48 +74,89 @@ main {
   justify-content: space-between;
   padding: 20px 22px;
 }
+
 .cabecalho .logo {
-  font-family: "Playfair Display", times, serif;
+  font-family: "Playfair Display", serif;
   font-weight: bold;
   font-size: 16px;
 }
+
 .cabecalho .links {
   padding-top: 15px;
   display: flex;
   gap: 30px;
 }
+
 .cabecalho .links .active {
-  color: #1e6fe0;
+  color: var(--cor-principal);
 }
+
 .cabecalho .links li {
   list-style: none;
 }
+
 .cabecalho .links li a {
   font-size: 16px;
   font-weight: 600;
   position: relative;
   transition: 0.4s ease-in-out;
 }
+
 .cabecalho .links li a:hover {
-  color: #1e6fe0;
+  color: var(--cor-principal);
 }
+
 .cabecalho .btn-contato {
   padding-top: 15px;
 }
+
 .cabecalho .btn-contato button {
   font-size: 16px;
-  border: 2px solid #3fa9f5;
+  border: 2px solid var(--cor-secundaria);
   border-radius: 16px;
   padding: 10px 20px;
-  background: linear-gradient(45deg, #1e6fe0, #3fa9f5);
+  background: linear-gradient(
+    45deg,
+    var(--cor-principal),
+    var(--cor-secundaria)
+  );
   background-size: 400% 100%;
-  width: -moz-fit-content;
   width: fit-content;
   transition: 0.5s ease-in-out;
   cursor: pointer;
   animation: gradient 2s ease-in infinite;
 }
 
+.cabecalho .btn-mudar-tema {
+  margin-top: 13px;
+  width: 120px;
+  height: 45px;
+  border: 5px solid var(--cor-texto);
+  border-radius: 60px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cabecalho .btn-mudar-tema::before {
+  content: " ";
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  background: var(--cor-texto);
+  border-radius: 50%;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  transition: left 0.5s;
+}
+
+.cabecalho .btn-mudar-tema.active::before {
+  left: 68%;
+}
+
+/* FIM DO CABEÇALHO */
+
+/* PÁGINA PRINCIPAL */
 .principal {
   height: 100vh;
   width: 90vw;
@@ -97,19 +164,23 @@ main {
   justify-content: space-between;
   position: relative;
 }
+
 .principal .conteudo-principal {
   width: 50%;
 }
+
 .principal .conteudo-principal h1 {
   font-size: 40px;
 }
+
 .principal .conteudo-principal .texto-animado h3 {
   font-size: 30px;
   line-height: 70px;
   font-weight: 700;
   color: transparent;
-  -webkit-text-stroke: 0.7px #1e6fe0;
+  -webkit-text-stroke: 0.7px var(--cor-principal);
 }
+
 .principal .btn-box {
   margin-top: 30px;
   width: 70%;
@@ -119,31 +190,36 @@ main {
   align-items: center;
   position: relative;
 }
+
 .principal .btn-box .btn {
   position: relative;
   padding: 10px 40px;
-  border: 2px solid #1e6fe0;
+  border: 2px solid var(--cor-principal);
   border-radius: 0.8rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: #1e6fe0;
+  background: var(--cor-principal);
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--cor-fundo);
   z-index: 1;
   overflow: hidden;
   transition: 0.5s ease-in-out;
 }
+
 .principal .btn-box .btn:nth-child(2) {
   background: transparent;
-  color: #3fa9f5;
+  color: var(--cor-principal);
 }
+
 .principal .btn-box .btn:nth-child(2):hover {
-  color: #1a1a2e;
+  color: var(--cor-fundo);
 }
+
 .principal .btn-box .btn:nth-child(2)::before {
-  background: #1e6fe0;
+  background: var(--cor-principal);
 }
+
 .principal .btn-box .btn::before {
   content: " ";
   position: absolute;
@@ -151,16 +227,19 @@ main {
   right: 0;
   width: 0%;
   height: 100%;
-  background: #1a1a2e;
+  background: var(--cor-fundo);
   z-index: -1;
   transition: 0.5s ease-in-out;
 }
+
 .principal .btn-box .btn:hover {
-  color: #3fa9f5;
+  color: var(--cor-principal);
 }
+
 .principal .btn-box .btn:hover::before {
   width: 100%;
 }
+
 .principal .btn-sociais {
   position: absolute;
   bottom: 100px;
@@ -168,6 +247,7 @@ main {
   display: flex;
   justify-content: space-between;
 }
+
 .principal .btn-sociais a {
   position: relative;
   display: inline-flex;
@@ -176,12 +256,14 @@ main {
   width: 40px;
   height: 40px;
   background: transparent;
-  border: 2px solid #1e6fe0;
+  border: 2px solid var(--cor-principal);
   border-radius: 50%;
-  padding: 25px;
+  padding: 0;
   z-index: 1;
   overflow: hidden;
+  transition: 0.3s ease-in-out;
 }
+
 .principal .btn-sociais a::before {
   content: " ";
   position: absolute;
@@ -189,26 +271,52 @@ main {
   left: 0;
   width: 0%;
   height: 100%;
-  background: #3fa9f5;
+  background: var(--cor-principal);
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
+
 .principal .btn-sociais a:hover i {
-  color: #1a1a2e;
+  color: var(--cor-fundo);
 }
+
 .principal .btn-sociais a:hover::before {
   width: 100%;
 }
+
 .principal .btn-sociais a i {
   font-size: 25px;
-  color: #1e6fe0;
+  color: var(--cor-principal);
   transition: 0.3s ease-in-out;
 }
-.principal .imagem {
+
+.principal .imagem-box {
   width: 500px;
   height: 500px;
-  background: url("../src/imagens/main.PNG");
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 100%;
-}/*# sourceMappingURL=main.css.map */
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--cor-principal);
+  border-radius: 50%;
+}
+
+.principal .imagem-box .imagem-dia {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url("../src/imagens/img-dia.PNG");
+}
+
+.principal .imagem-box .imagem-noite {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 100%;
+  background: url("../src/imagens/img-noite.PNG");
+  transition: left 0.5s;
+}
+
+.imagem-box.active .imagem-noite {
+  left: 0;
+}
+
+/* FIM DO CONTEÚDO PRINCIPAL */
