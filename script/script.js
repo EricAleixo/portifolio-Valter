@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Botão dark mode
   const btnMudarTema = document.querySelector(".btn-mudar-tema");
   const fundo = document.querySelector(".fundo");
   const imagemBox = document.querySelector(".imagem-box");
@@ -37,4 +38,43 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
   });
+
+  // Animação das barras
+  const habilidadesSection = document.querySelector("#habilidades");
+  const bars = document.querySelectorAll(".barra span:first-child");
+
+  function animateBars() {
+    bars.forEach(bar => {
+      const percentage = parseInt(bar.className.match(/\d+/)[0]);
+      let width = 0;
+      const interval = setInterval(() => {
+        if (width >= percentage) {
+          clearInterval(interval);
+        } else {
+          width++;
+          bar.style.width = width + '%';
+          bar.nextElementSibling.textContent = width + '%';
+        }
+      }, 30);
+    });
+  }
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function onScroll() {
+    if (isElementInViewport(habilidadesSection)) {
+      animateBars();
+      window.removeEventListener("scroll", onScroll);
+    }
+  }
+
+  window.addEventListener("scroll", onScroll);
 });

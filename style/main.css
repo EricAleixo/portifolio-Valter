@@ -39,6 +39,10 @@
   color: var(--cor-texto);
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100vh;
   width: 100%;
@@ -246,6 +250,7 @@ main {
   width: 200px;
   display: flex;
   justify-content: space-between;
+  gap:20px;
 }
 
 .principal .btn-sociais a {
@@ -262,6 +267,7 @@ main {
   z-index: 1;
   overflow: hidden;
   transition: 0.3s ease-in-out;
+  padding:30px;
 }
 
 .principal .btn-sociais a::before {
@@ -303,7 +309,7 @@ main {
   height: 100%;
   width: 100%;
   position: absolute;
-  background: url("../src/imagens/img-dia.PNG");
+  background: url("../src/imagens/valter/img-dia.PNG");
 }
 
 .principal .imagem-box .imagem-noite {
@@ -311,7 +317,7 @@ main {
   width: 100%;
   position: absolute;
   left: 100%;
-  background: url("../src/imagens/img-noite.PNG");
+  background: url("../src/imagens/valter/img-noite.PNG");
   transition: left 0.5s;
 }
 
@@ -320,3 +326,142 @@ main {
 }
 
 /* FIM DO CONTEÚDO PRINCIPAL */
+
+/* COMEÇO BARRA DE HABILIDADES */
+.habilidades {
+  height: 100vh;
+  width: 100%;
+}
+
+.habilidades .skills {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 20px 30px black;
+  padding: 100px;
+  border-radius: 30px;
+}
+
+.habilidades .skills h2 {
+  font-size: 40px;
+}
+
+.habilidades .skills .text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.habilidades .skills .text .logo {
+  gap: 5px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
+
+.habilidades .skills h3 {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.habilidades .skills ul {
+  list-style: none;
+}
+
+.habilidades .skills ul li {
+  margin: 20px 0;
+}
+.habilidades .skills ul li .barra {
+  background-color: #b6b6b6;
+  display: block;
+  width: 100%;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.habilidades .skills ul li .barra:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.24);
+}
+.habilidades .skills ul li .barra span {
+  height: 100%;
+  float: left;
+  background-image: linear-gradient(
+    135deg,
+    var(--cor-secundaria),
+    var(--cor-principal)
+  );
+}
+
+.habilidades .skills ul li .barra .percentage {
+  color: var(--cor-terciaria);
+  background:var(--cor-principal);
+}
+
+@keyframes html {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 82%;
+  }
+}
+@keyframes css {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes js {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 40%;
+  }
+}
+@keyframes python {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 94%;
+  }
+}
+@keyframes react {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 67%;
+  }
+}
+
+.animate.html {
+  width: 82%;
+  animation: html 3s;
+}
+
+.animate.css {
+  width: 70%;
+  animation: css 3s;
+}
+
+.animate.js {
+  width: 40%;
+  animation: js 3s;
+}
+
+.animate.python {
+  width: 94%;
+  animation: python 3s;
+}
+
+.animate.react {
+  width: 67%;
+  animation: react 3s;
+}
