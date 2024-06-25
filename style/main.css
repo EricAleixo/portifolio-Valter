@@ -177,12 +177,28 @@ main {
   font-size: 40px;
 }
 
+.principal .conteudo-principal .texto-animado{
+  height: 60px;
+}
+
 .principal .conteudo-principal .texto-animado h3 {
   font-size: 30px;
   line-height: 70px;
   font-weight: 700;
   color: transparent;
   -webkit-text-stroke: 0.7px var(--cor-principal);
+}
+
+.principal .conteudo-principal .texto-animado h3::after{
+  content: "|";
+  margin-left: 5px;
+  opacity: 1;
+  animation:pisca 0.7s infinite;
+}
+
+@keyframes pisca {
+  0%,100%{opacity:1}
+  50%{opacity:0}
 }
 
 .principal .btn-box {
@@ -231,7 +247,7 @@ main {
   right: 0;
   width: 0%;
   height: 100%;
-  background: var(--cor-fundo);
+  background: var(--cor-secundaria);
   z-index: -1;
   transition: 0.5s ease-in-out;
 }
@@ -337,7 +353,7 @@ main {
   width: 100%;
   height: 100%;
   box-shadow: 0 20px 30px black;
-  padding: 100px;
+  padding: 70px;
   border-radius: 30px;
 }
 
@@ -485,7 +501,6 @@ main {
   align-items: center;
   height:100vh;
   width:100%;
-  background:var(--cor-fundo);
   gap:30px;
   position: relative;
   overflow: hidden;

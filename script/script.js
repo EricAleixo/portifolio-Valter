@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.documentElement.style.setProperty("--cor-secundaria", "#2d2d8b");
       document.documentElement.style.setProperty("--cor-terciaria", "#333");
       document.documentElement.style.setProperty("--cor-texto", "#fff");
-      document.documentElement.style.setProperty("--cor-fundo", "#fff");
+      document.documentElement.style.setProperty("--cor-fundo", "#dfdfdf");
       document.documentElement.style.setProperty(
         "--cor-botao-fundo",
         "linear-gradient(45deg, #fff, #ddd)"
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Animação das barras
+  // Animação das barras de habilidades
   const habilidadesSection = document.querySelector("#habilidades");
   const bars = document.querySelectorAll(".barra span:first-child");
 
@@ -78,3 +78,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", onScroll);
 });
+
+//typewriter aqui
+
+const textDisplay = document.getElementById('texto-animado')
+
+const phrases = ['Desenvolvedor WEB', 'WEB Designer', 'Programador Full stack', 'print não é variável']
+let i = 0
+let j = 0 
+let currentPhrase = []
+let isDeleting = false
+let isEnd = false
+
+function loop () {
+  isEnd = false
+  textDisplay.innerHTML = currentPhrase.join('')
+
+  if (i < phrases.length) {
+
+    if (!isDeleting && j <= phrases[i].length) {
+      currentPhrase.push(phrases[i][j])
+      j++
+      textDisplay.innerHTML = currentPhrase.join('')
+    }
+
+    if(isDeleting && j <= phrases[i].length) {
+      currentPhrase.pop(phrases[i][j])
+      j--
+      textDisplay.innerHTML = currentPhrase.join('')
+    }
+
+    if (j == phrases[i].length) {
+      isEnd = true
+      isDeleting = true
+    }
+
+    if (isDeleting && j === 0) {
+      currentPhrase = []
+      isDeleting = false
+      i++
+      if (i === phrases.length) {
+        i = 0
+      }
+    }
+  }
+  const spedUp = Math.random() * (80 -50) + 50
+  const normalSpeed = Math.random() * (300 -200) + 200
+  const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed
+  setTimeout(loop, time)
+}
+
+loop()
