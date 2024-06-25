@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const textDisplay = document.getElementById('texto-animado')
 
-const phrases = ['Desenvolvedor WEB', 'WEB Designer', 'Programador Full stack', 'print não é variável']
+const phrases = ['Desenvolvedor WEB', 'WEB Designer', 'Programador Fullstack', 'print não é variável']
 let i = 0
 let j = 0 
 let currentPhrase = []

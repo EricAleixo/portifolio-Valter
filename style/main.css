@@ -631,3 +631,48 @@ main {
 .imagem-container:hover .overlay{
   opacity: 1;
 }
+
+/* especilidades começa aqui */
+.especialidades{
+  width:100%;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.especialidades h2{
+  margin-top:100px;
+  margin-bottom: 70px;
+  font-size: 50px;
+}
+
+.especialidades .especialidades-box-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:60px;
+}
+
+.especialidades .especialidades-box{
+  width:400px;
+  padding:30px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.especialidades .especialidades-box:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 8px var(--cor-principal);
+}
+
+.especialidades .especialidades-box i{
+  font-size:70px;
+}
+
+/* especialidades acaba aqui */
+
+/* começando a seção sobre aqui */
