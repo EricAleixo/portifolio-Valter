@@ -854,14 +854,14 @@ main {
     transform: translate(0, 0) rotate(0) scale(1);
   }
   20% {
-    transform: translate(73px, -1px) rotate(36deg) scale(.9);
+    transform: translate(73px, -1px) rotate(36deg) scale(0.9);
   }
   60% {
-    transform: translate(83px, 122px) rotate(108deg) scale(1.2)
+    transform: translate(83px, 122px) rotate(108deg) scale(1.2);
   }
 }
 @keyframes animacaoParticulas3 {
-  0%{
+  0% {
     transform: translate(-300px, 151px) rotate(0);
   }
   100% {
@@ -878,12 +878,12 @@ main {
   60% {
     transform: translate(-263px, -164px) rotate(180deg);
   }
-  100%{
+  100% {
     transform: translate(-1px, 0) rotate(180);
   }
 }
 @keyframes animacaoParticulas5 {
-  0%{
+  0% {
     transform: translate(0, 0) rotate(0);
   }
   40% {
@@ -895,4 +895,91 @@ main {
   100% {
     transform: translate(0, 0) rotate(0);
   }
+}
+
+/* termina aqui o sobre */
+
+/* contato aqui */
+.contato {
+  margin-top: 200px;
+  height: 80vh;
+}
+
+.contato h2 {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.contato form {
+  max-width: 70rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.contato form .caixa-input {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.contato form .caixa-input .campo-input {
+  position: relative;
+  width: 49%;
+  margin: 0.8rem 0;
+}
+
+.contato form .caixa-input .campo-input input,
+.contato form .text-area textarea {
+  width: 100%;
+  height: 100%;
+  padding: 1.1rem;
+  font-size: 1.2rem;
+  color: var(--cor-principal);
+  background-color: transparent;
+  border-radius: 0.6rem;
+  border: 0.2rem solid var(--cor-principal);
+}
+
+.contato form .caixa-input .campo-input input::placeholder,
+.contato form .text-area textarea::placeholder {
+  color: var(--cor-texto);
+}
+
+.contato form .caixa-input {
+  position: relative;
+  margin: 0.8rem 0 2.7rem;
+  display: flex;
+}
+
+.contato form .caixa-input textarea {
+  resize: none;
+}
+
+.contato form .btn {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 110%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+
+.contato .btn button {
+  font-size: 16px;
+  border: 2px solid var(--cor-secundaria);
+  border-radius: 16px;
+  padding: 20px 60px;
+  background: linear-gradient(
+    45deg,
+    var(--cor-principal),
+    var(--cor-secundaria)
+  );
+  background-size: 400% 100%;
+  width: fit-content;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  animation: gradient 2s ease-in infinite;
 }
